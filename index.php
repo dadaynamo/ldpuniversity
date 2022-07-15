@@ -25,6 +25,6 @@ include('php_page/function/session_gest.php');
 include('php_page/home_pub.php');
 include('php_page/develop_dash.php');
 include('php_page/home_priv.php'); 
-
+include('php_page/log_page.php');
 
 ?>

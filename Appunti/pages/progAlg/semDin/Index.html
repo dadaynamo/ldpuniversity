@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+      
+       <!-- palette https://coolors.co/002642-840032-e59500-e5dada-02040f--> 
+    </head>
+    <body>
+ 
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="http://localhost/uni/Appunti">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Linguaggio L
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">BNF e Sintassi</a>
+                  <a class="dropdown-item" href="#">Semantica Statica</a>
+                  <a class="dropdown-item" href="semDin/">Semantica Dinamica</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="asset/pdf/LinguaggioL-CheatSheet.pdf" target="_blank   ">Risorse PDF</a>
+                </div>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Divide et impera</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Programmazione dinamica</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Appunti vari</a>
+            </li>
+           
+          </ul>
+        </div>
+      </nav>
+
+
+        <div class="container" style="margin-top: 50px;">
+            <h1>Struttura del compilatore</h1>
+            <img src="img/struct_comp.jpg" class="mx-auto d-block" width="50%" height="50%" alt="struct_comp">
+        </div>
+        <br>
+        <div class="container">
+            <ul class="list-group">
+                <li class="list-group-item">L'analisi di semantica statica permette di controllare che alcune proprietà siano verificate (<b>Tipi</b>)</li>
+                <li class="list-group-item">Questi controlli non devono essere ripetuti a tempo di esecuzione</li>
+                <li class="list-group-item">Per generare il codice oggetto, che possa essere interpretato ed eseguito dal calcolatore, occorre conoscere i passi che la macchina astratat deve eseguire per implementare le istruzioni del programma
+                    <ul class="list-group">
+                        <li class="list-group-item">Occorre definire in modo formale e non ambiguo i passi da compiere per generare il codice che corrisponde alle istruzioni del programma</li>
+                        <li class="list-group-item">DEFINIZIONE di semantica dinamica</li>
+                    </ul>
+                </li>   
+            </ul>
+        </div>
+
+        <div class="container">
+            <h1>La memoria</h1>
+            <p><b>La memoria astratta</b> è un insieme di celle contigue di memoria ciascuna caratterizzata da un indirizzo univoco (<i>locazione </i>) e da un contenuto (<i>valore</i>)</p>
+            <img src="img/mem_abstr_1.jpg" class="mx-auto d-block" width="50%" height="50%" alt="mem_abstr_1">
+        </div>
+
+        <div class="container">
+            <h1>Identificatori</h1>
+            <p>Un identificatore è una sequenza di caratteri (<b>stringa</b>) che contiene lettere, cifre (digit) e _ e che non inizia con una cifra. 
+                Molti linguaggi sono case-sensitive 
+            </p>
+            
+        </div>
+
+        <div class="container">
+            <h1>
+                Ambiente e memoria
+            </h1>
+            <p>Un ambiente è una funzione che associa nomi mnemonici a locazioni</p>
+            <img src="img/mem_abstr_2.jpg" class="mx-auto d-block" width="50%" height="50%"  alt="mem_abstr_2">
+            <br>
+            <p>Ambiente \( \rho : Id \rightarrow Loc\)</p>
+            <p>"scrivi una volta, leggi molte"</p>
+            <ul class="list-group">
+                <li class="list-group-item">Serve per dare nomi agli indirizzi di memoria</li>
+                <li class="list-group-item">In questo modo possiamo scrivere programmi senza tener conto degli indirizzi effettivi delle locazioni di memoria</li>
+                <li class="list-group-item">Non dobbiamo preoccuparci di cambiare gli indirizzi fisici a seconda della posizione di memoria fornita per eseguire il programma</li>
+                <li class="list-group-item">Il<b>LOADER</b> farà la traduzione dei nomi in indirizzi fisici di memoria</li>
+            </ul>
+            <br>
+            <p>Memoria \( \sigma : Loc \rightarrow Val\)</p>
+            <p>"scrivi molte, leggi molte"</p>
+
+        </div>
+
+       <div class="container">
+           <h1>In sintesi</h1>
+           <p>La semantica dinamica si definisce rispetto alla <b>Macchina astratta</b>
+        La macchina astratta contiene un <b>ambiente</b> e una <b>memoria</b></p>
+            <img src="img/sintesi_1.jpg" class="mx-auto d-block" width="50%" height="50%"  alt="sintesi_1">
+    </div>
+    
+    
+<p>da scrivere !!!!</p>
+
+    <div class="container">
+        <h1>Stato della macchina astratta</h1>
+        <ul class="list-group">
+            <li class="list-group-item">Insieme delle istruzioni che devono essere ancora eseguite, associato ad un ambiente e a una memoria</li>
+            <li class="list-group-item">Si inizia dallo stato in cui tutte le istruzioni del programma sono ancora da eseguire (<span style="color: red">stato iniziale</span>)</li>
+            <li class="list-group-item">L'esecuzione del progarmma termina quando non ci sono più istruzioni da eseguire (<span style="color: blue">stato finale</span>)</li>
+            <li class="list-group-item">Alla fine il <b>risultato</b> del programma sarà il <b>contenuto della memoria dello stato finale</b></li>
+            <li class="list-group-item">Per passare da uno stato all'altro occorre sapere quali azioni fare in corrispondenza delle istruzioni. Questo lo dice la semantica dinamica: si passa da uno stato ad un altro</li>
+        </ul>
+
+        <p>
+            <span style="color: red">eseguendo un comando</span>
+            <br>
+            <span style="color: green">valutando un'espressione</span>
+            <br>
+            <span style="color: blue">elaborando una dichiarazione</span>
+            <br>
+        </p>
+    </div>
+
+
+    <div class="container">
+        <h3>Semantica Dinamica</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Descrivere il comportamento dinamico della macchina, definiti come una serie di transizioni tra gli stati della macchina durante il processo di calcolo</li>
+            <li class="list-group-item">Un programma ciene considerato come una sequenza di istruzioni atomiche che modificano gli stati delle macchine</li>
+            <li class="list-group-item">Il passaggio da uno stato (configurazione) ad un altro è rappresentato mediante funzioni matematiche dette <b>transizioni della macchina</b></li>
+            <li class="list-group-item">Possiamo quindi definire l'esecuzione di un programma (computazione) come una sequenza di stati connessi l'uno all'altro da transizioni</li>
+            <li class="list-group-item">Il comportamento del linguaggio L viene descritto formalmente da un insieme di regole che specificano come valutare le espressioni, come eseguire i comandi e come elaborare le dichiarazioni</li>
+        </ul>
+        <img src="img/trans_stat_1.jpg" class="mx-auto d-block" width="50%" height="50%"  alt="trans_stat_1">
+    </div>
+
+    <div class="container mx-auto d-block">
+        <h1>Semantica dinamica: le espressioni</h1>
+        <p class="text-center">\( \langle E, \rho , \sigma \rangle \rightarrow_e \langle E', \rho , \sigma \rangle , Eval(E, \rho , \sigma )= v \in Val \Longleftrightarrow \langle E, \rho , \sigma \rangle \rightarrow^*_e v \)</p>
+        <p>Le espressioni non definiscono alcun nome e non possono modiifcare l'ambiente, non assegnano nome agli identificatori, possono solo rappresentare un valore</p>
+    </div>
+
+    <div class="container" style="margin-bottom: 50px;">
+        <img src="img/s_e_id1.jpg" class="mx-auto d-block" width="30%" height="30%"  alt="s_e_id1">
+        <br>
+        <p class="p-3 mb-2 bg-warning text-dark">Premessa: Se \( \rho \) assocai a Id un valore v oppure \( \rho \) associa a Id una locazione L e nella locazione di memorai L è memorizzato un valore v</p>
+        <p class="p-3 mb-2 bg-success text-dark">Conseguenza: Allora da \( \rho \) a \( \sigma \) Id viene valutato v in un passo di valutazione</p>
+    </div>
+
+
+    <div class="container" style="margin-bottom: 50px;">
+        <img src="img/s_e_uop1.jpg" class="mx-auto d-block" width="50%" height="50%"  alt="s_e_uop1">
+        <br>
+        <p class="p-3 mb-2 bg-warning text-dark">Premessa: Se in un passo di valutazione a partire da  \( \rho \) e \( \sigma \) E si trasforma in E' </p>
+        <p class="p-3 mb-2 bg-success text-dark">Conseguenza: Allora da \( \rho \) e \( \sigma \) E si trasforma in uop E' in un passo di valutazione</p>
+    </div>
+
+    <div class="container" style="margin-bottom: 50px;">
+    <img src="img/s_e_bop1.jpg" class="palettePr mx-auto d-block" width="30%" height="30%"  alt="s_e_bop1">
+    <br>
+    <p class="p-3 mb-2 bg-warning text-dark">Premessa: se in un passo di valutazione a partire da \( \rho \) e \( \sigma \) \(E_1\) si trasforma in \(E'_1\)</p>
+    <p class="p-3 mb-2 bg-success text-dark">Conseguenza: Allora da \( \rho \) e \(\sigma \) \(E_1\) bop \(E_2\) si trasforma in \(E'_1 bop E_2\) in un passo di valutazione</p> 
+      <br>
+    <img src="img/s_e_bop2.jpg" class="paletteSe mx-auto d-block" width="30%" height="30%"  alt="s_e_bop2">
+    <p class="p-3 mb-2 bg-warning text-dark">Premessa: se in un passo di valutazione a partire da \( \rho \) e \( \sigma \) \(E_1\) si trasforma in \(E'_1\)</p>
+    <p class="p-3 mb-2 bg-success text-dark">Conseguenza: Allora da \( \rho \) e \(\sigma \) \(v_1\) bop \(E_2\) si trasforma in \(v_1 bop E_2\) in un passo di valutazione</p> 
+    
+    </div>
+
+
+
+    <div class="container" style="border-left-color: black !important;
+    border-style: solid !important;
+    border-width: 5px !important;">
+    <p>Le espressioni non modificano mai ambiente e memoria <br> Le parti destre di \(\rightarrow_e\) in tutte le regole hanno sempre lo stesso ambiente e la stessa memoria delle parti sinistre</p>
+    </div>
+
+    <div class="container" style="margin-bottom: 50px;">
+      <h1>Semantica dinamica: Comandi</h1>
+      <p class="text-center">\( \langle C, \rho , \sigma \rangle \rightarrow_c \langle C', \rho ' , \sigma ' \rangle , Exec(C, \rho , \sigma )= \sigma ' \Longleftrightarrow \langle C, \rho , \sigma \rangle \rightarrow^*_c \sigma ' \)</p>
+      <img src="img/s_c_i2.jpg" class="mx-auto d-block" width="30%" height="30%"  alt="s_c_i2">
+      <br>
+      <p class="p-3 mb-2 bg-warning text-dark">Premessa: Se a partire da  \( \rho \) e \( \sigma \) l'espressione E in un certo numero di passi viene valutata ad un valore v</p>
+      <p class="p-3 mb-2 bg-success text-dark">Conseguenza: Allora l'assegnamento Id=E può essere riscritto come Id=v lasciando invariati ambiente e memoria perchè la valutazione delle espressioni non li modifica</p>
+  </div>
+  <div class="container">
+    <img src="img/s_c_i3.jpg" class="mx-auto d-block" width="30%" height="30%"  alt="s_c_i3">
+    <br>
+    <p class="text-primary">Arrivati alla configurazione Id=v si conclude l'esecuzione dell'assegnamento lasciando inalterato l'ambiente e modificando la locazione di memoria individuata da \( \rho (Id) \) scrivendoci il valore v</p>
+  </div>
+
+
+  <div class="container">
+    <img src="img/s_c_seq1.jpg" class="mx-auto d-block" width="30%" height="30%"  alt="s_c_seq1">
+    <br>
+    <p class="p-3 mb-2 bg-warning text-dark">Premessa: Se a partire da  \( \rho \) e \( \sigma \) un passo di esecuzione di \(C_1\) lo trasforma in \(C_1 '\) con una nuova configurazione della memoria \(\sigma '\)</p>
+    <p class="p-3 mb-2 bg-success text-dark">Conseguenza: Allora anche \(C_1\) ; \(C_2\) può essere riscritto come \(C_1 '\) ; \(C_2\) con confugurazione della memoria \(\sigma '\) </p>
+  </div>
+
+  <div class="container">
+    <img src="img/s_c_seq2.jpg" class="mx-auto d-block" width="30%" height="30%"  alt="s_c_seq1">
+    <br>
+    <p class="p-3 mb-2 bg-warning text-dark">Premessa: Se a partire da  \( \rho \) e \( \sigma \) un passo di esecuzione di \(C_1\) termina la sua esecuzione producendo una configurazione della memoria \(\sigma '\)</p>
+    <p class="p-3 mb-2 bg-success text-dark">Conseguenza: Allora anche \(C_1\) ; \(C_2\) può essere riscritto in \(C_2\) con confugurazione della memoria \(\sigma '\) </p>
+  </div>
+
+
+  <div class="container">
+    <p class="text-primary">\(\langle C_1 , \rho , \sigma \rangle \rightarrow_c \sigma '\) è l'ultimo passo di esecuzione di \(C_1\) raggiunto con una sequenza di passi generati mediante la regola (seq1)</p>
+  </div>
+
+
+  <div class="container">
+    <hr>
+    <img src="img/s_c_ifrep.jpg" class="mx-auto d-block" width="70%" height="70%"   alt="s_c_ifrep.jpg">
+  </div>
+  <hr>
+  <div class="container">
+    <img src="img/s_c_b1.jpg"  class="mx-auto d-block" width="30%" height="30%" alt="s_c_b1">
+    <p class="p-3 mb-2 bg-warning text-dark">Premessa: se la dichiarazione D genera un nuovo ambiente \(\rho '\) e una memoria \(\sigma '\)</p>
+    <p class="p-3 mb-2 bg-success text-dark">Conseguenza: allora il comando C si esegue nell'ambiente e nella memoria correnti estesi con quelli generati da D</p>
+  </div>
+
+
+
+  <div class="container mx-auto d-block">
+    <h1>Semantica dinamica: le dichiarazioni</h1>
+    <p class="text-center">\( \langle D, \rho , \sigma \rangle \rightarrow_e \langle D', \rho , \sigma \rangle , Elab(D, \rho , \sigma )= \langle \rho ', \sigma ' \rangle \Longleftrightarrow \langle D, \rho , \sigma \rangle \rightarrow^*_d \langle \rho ', \sigma ' \rangle \)</p>
+    
+</div>
+
+<div class="container">
+  <img src="img/s_d_const1.jpg"  class="mx-auto d-block" width="30%" height="30%" alt="s_d_const1.jpg">
+  <p class="p-3 mb-2 bg-warning text-dark">Premessa: se a partire da \(\rho\) e \(\sigma\) l'espressione E in un certo numero di passi viene valuatta ad un valore v
+  </p>
+  <p class="p-3 mb-2 bg-success text-dark">Conseguenza: allora la dichiarazione di costante const Id: T = E associa nell'ambiente generato l'identificatore Id con il valore v e lascia inalterata la memoria </p>
+</div>
+
+<div class="container">
+  <img src="img/s_d_var1.jpg"  class="mx-auto d-block" width="30%" height="30%" alt="s_d_var1.jpg">
+  <p class="p-3 mb-2 bg-warning text-dark">Premessa: se a partire da \(\rho\) e \(\sigma\) l'espressione E in un certo numero di passi viene valuatta ad un valore v
+  </p>
+  <p class="p-3 mb-2 bg-success text-dark">Conseguenza: allora la dichiarazione di variabile var Id: T = E associa nell'ambiente generato l'identificatore Id a una nuova locazione L (mai usata prima) e aggiorna la memoria andando a scrivere il valore v nella locazione L</p>
+</div>
+
+<div class="container">
+  <img src="img/s_d_dd1.jpg"  class="mx-auto d-block" width="30%" height="30%" alt="s_d_dd1.jpg">
+  <p class="p-3 mb-2 bg-warning text-dark">Premessa: se a partire da \(\rho\) e \(\sigma\) la dichiarazione \(D_1\) in un passo di elaborazione conduce allo stato \(\langle D_1 ', \rho ', \sigma ' \rangle \)</p>
+  <p class="p-3 mb-2 bg-success text-dark">Conseguenza: allora la dichiarazione sequenziale \(D_1 ; D_2\) può effettuare lo stesso passo di elaborazione per \(D_1\) conducendo a \(D_1 ; D_2\) con ambiente \(\rho '\) e memoria \(\sigma '\)</p>
+</div>
+
+
+<div class="container">
+  <img src="img/s_d_dd2.jpg"  class="mx-auto d-block" width="30%" height="30%" alt="s_d_dd2.jpg">
+  <p class="p-3 mb-2 bg-warning text-dark">Premessa: se a partire da \(\rho\) e \(\sigma\) la dichiarazione \(D_2\) in un passo di elaborazione conduce allo stato \(\langle D_2 ', \rho ', \sigma ' \rangle \)</p>
+  <p class="p-3 mb-2 bg-success text-dark">Conseguenza: allora la dichiarazione sequenziale \(\rho_1 ; D_2\) può effettuare lo stesso passo di elaborazione per \(D_2\) conducendo a \(\rho_1 ; D_2\) con ambiente \(\rho '\) e memoria \(\sigma '\)</p>
+</div>
+
+
+
+<div class="container">
+  <img src="img/s_d_dd3.jpg"  class="mx-auto d-block" width="30%" height="30%" alt="s_d_dd3.jpg">
+  <p class="p-3 mb-2 bg-success text-dark">Conseguenza: la dichiarazione sequenziale \(\rho_1 ; \rho_2\) a partire da \(\rho\) e \(\sigma\) genera l'ambiente \(\rho_1\) [ \(\rho_2\) ] e stessa memoria \(\sigma\)</p>
+</div>
+
+<div class="container">
+  <h3>Attenzione !!!</h3>
+  <p>Le regole (dd2) (dd3) contengono configurazioni non ammissibili rispetto alla definizione di sistema di transizione</p>
+  <img src="img/s_d_prob1.jpg" class="mx-auto d-block" width="40%" height="40%" alt="s_d_prob1">
+  <p>La parte di codice delle configurazioni di stato deve essere generabile dalla grammatica che definisce D, e questo non vale per le configurazioni sopra</p>
+<p>Quindi per risolvere basta aggiungere come categoria sintattica \(\rho\) direttamente</p>
+<img src="img/s_d_sol1.jpg" alt="s_d_sol1">
+</div>
+
+<hr>
+
+<div class="container">
+  <h1>Semantica dinamica delle funzioni</h1> 
+  <img src="img/s_d_f_riass.jpg" class="mx-auto d-block" width="40%" height="40%" alt="s_d_f_riass.jpg">
+
+  <br>
+  <img src="img/s_d_f_fd1.jpg" alt="s_d_f_fd1.jpg">
+  <p>
+    \(\rho '\) cambia a seconda se il nostro linguaggio usa scoping statico o dinamico. Infatti:
+  </p>
+  <div class="container-all mx-auto d-block">
+  <p class="text-center"> 
+    \(   
+      \begin{cases}
+      \rho '= nil \Longrightarrow (scoping dinamico) \\
+      \rho '= \rho_{|FI(C)-BI(form)} \Longrightarrow  (scoping statico) \\
+      \end{cases}
+    \)</p>
+  <p>Quando si ha lo scoping statico in \(\rho '\) bisogna inserire le variabili <b>esistenti nell'ambiente</b> al momento della dichiarazione che non sono legate in <b>C</b> o nei <b>formali</b></p>
+  <br>
+  <p><b>Chiusura</b>: blocco che lega le variabili libere della funzione registrando l'ambiente dinamico disponibile al momento della dichiarazione della funzione e il corpo della funzione <br> - <span class="text-danger">formato \(D;C\)</span></p>
+  <p>in sostanza la Chiusura è una dichiarazione seguita da un comando</p>
+  </div>
+
+
+</div>
+
+<br>
+<div class="containerall">
+<hr>
+  <h4>Esempio di transizione di stato dopo una dichiarazione di funzione in scoping diversi</h4>
+  <img src="img/s_f_es1.jpg"  class="mx-auto d-block" width="90%" height="90%" alt="s_f_es1.jpg">
+  <hr>
+</div>
+
+
+<div class="container">
+  <h2>Invocazione di funzione</h2>
+  <img src="img/s_d_f_fd2.jpg" class="mx-auto d-block" width="40%" height="40%"   alt="s_d_f_fd2.jpg">
+<p class="p-3 mb-2 bg-warning text-dark">Premessa: Se nell'ambiente dinamico \(\rho \) vi è già definita una lambda astrazione in \(\rho(Id)\) </p>
+<p class="p-3 mb-2 bg-success text-dark">Conseguenza: allora a partire dall'invocazione i vari parametri formali vengono settati uno a uno come i parametri formali \(ae\)</p>
+<img src="img/s_d_f_es1.jpg"  class="mx-auto d-block" width="90%" height="90%" alt="s_d_f_es1.jpg">
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6" style="background-color:red; border:1px solid black;">
+      <img src="img/s_d_f_fd3.jpg" class="mx-auto d-block" width="70%" height="70%"   alt="s_d_f_fd3.jpg">
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6" style="background-color:yellow; border:1px solid black;">
+      <img src="img/s_d_f_fd4.jpg" class="mx-auto d-block" width="70%" height="70%"   alt="s_d_f_fd4.jpg">
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6" style="background-color:green; border:1px solid black;">
+      <img src="img/s_d_f_fd5.jpg" class="mx-auto d-block" width="70%" height="70%"   alt="s_d_f_fd5.jpg">
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6" style="border:1px solid black;">
+      <img src="img/s_d_f_fd6.jpg" class="mx-auto d-block" width="70%" height="70%"   alt="s_d_f_fd6.jpg">
+    </div>
+  </div>
+</div>
+<div class="container">
+  <img src="img/s_d_f_fd7.jpg" class="mx-auto d-block" width="40%" height="40%"   alt="s_d_f_fd7.jpg">
+</div>
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<footer class="page-footer font-small special-color-dark bg-dark text-white pt-4">
+
+    <!-- Footer Elements -->
+    <div class="container">
+  
+      <!-- Social buttons -->
+      <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+          <a class="btn-floating btn-fb mx-1">
+            <i class="fab fa-facebook-f"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-tw mx-1">
+            <i class="fab fa-twitter"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-gplus mx-1">
+            <i class="fab fa-google-plus-g"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-li mx-1">
+            <i class="fab fa-linkedin-in"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-dribbble mx-1">
+            <i class="fab fa-dribbble"> </i>
+          </a>
+        </li>
+      </ul>
+      <!-- Social buttons -->
+  
+    </div>
+    <!-- Footer Elements -->
+  
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2022 Copyright:
+      <a href="https://mdbootstrap.com/"> ldpcomputer.com</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+  
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>

@@ -1,0 +1,78 @@
+
+
+
+/*gestione pagine*/
+
+$pag Variabile raccoglie in get la variabile pag
+
+
+if $pag ==
+
+'' pagina iniziale
+
+'' 
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------
+/* cosa deve fare il sito
+- libretto esami 
+- calcolo media
+- appelli tab
+- calendario google
+
+-----------------------
+-agenda 
+-facoltà
+-valutami
+- promemoria personali
+
+----------------------
+login 
+logout
+registrazione
+support
+
+---------------------------------------
+
+
+//colori palette
+
+blu scuro #333259
+blu #333259
+marrone #a69992
+arancione #a66249
+nero #262626
+
+
+
+
+
+
+/*
+asset:
+
+css
+img
+js
+file
+
+*/
+
+
+
+
+
+
+
+
+

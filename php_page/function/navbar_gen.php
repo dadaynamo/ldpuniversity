@@ -66,18 +66,29 @@ echo '<nav class="navbar navbar-expand-lg navbar-light bg-light">';
 				echo '<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>';
 			echo '</li>';
 			echo '<li class="nav-item">';
-				echo '<a class="nav-link" href="#">Blog</a>';
+				echo '<a class="nav-link" href="">Blog</a>';
 			echo '</li>';
 			
-					
-			echo '<li class="nav-item">';
-				echo '<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>';
-			echo '</li>';
-			
-			echo '<li class="nav-item">';
-				echo '<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>';
-			echo '</li>';
-		
+	
+
+		if(!isset($_SESSION["id"])){
+
+
+				echo '<li class="nav-item">';
+					echo '<a class="nav-link disabled" href="#">Appunti Informatica Unipi</a>';
+				echo '</li>';
+				echo '<li class="nav-item">';
+					echo '<a class="nav-link disabled" href="#">Libretto</a>';
+				echo '</li>';
+				}else{
+				echo '<li class="nav-item">';
+					echo '<a class="nav-link" href="http://localhost/ldpuniversity/Appunti/index.html">Appunti Informatica Unipi</a>';
+				echo '</li>';
+				echo '<li class="nav-item">';
+				echo '<a class="nav-link" href="http://localhost/ldpuniversity/Libretto/index.html">Libretto</a>';
+				echo '</li>';
+				}
+
 		echo '</ul>';
 		echo '<span class="my-2 my-lg-0">';
 

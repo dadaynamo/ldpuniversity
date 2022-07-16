@@ -52,4 +52,18 @@ if ($caso=="login1" && !isset($_SESSION["id"]))
 }
 
 
+if($caso=='registrazione1' && !isset($_SESSION["id"])){
+	echo $_POST["name"];
+	echo $_POST["surname"];
+	echo $_POST["username"];
+	echo $_POST["email"];
+	echo $_POST["password"];
+
+$passw_hashed=password_hash($_POST["password"],PASSWORD_DEFAULT);
+$stringa="INSERT INTO user (name,surname,username,email,password) VALUES ('".$_POST["name"]."','".$_POST["surname"]."','".$_POST["username"]."','".$_POST["email"]."','".$passw_hashed."')";
+
+$q=mysqli_query($conn,$stringa) or die(mysqli_error($conn));
+
+}
+
 ?>

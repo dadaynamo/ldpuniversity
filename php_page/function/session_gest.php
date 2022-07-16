@@ -1,10 +1,11 @@
 <?php
-
+//Non toccare funziona bene
 if($pag=="logout" && isset($_SESSION["id"])){
 	
 
 	session_destroy();
-	header('Location: http://localhost/ldpuniversity');
+	$link_header="Location: ".$url_gen;
+	header($link_header);
  
 }
 
@@ -14,34 +15,41 @@ if ($caso=="login1" && !isset($_SESSION["id"]))
 	//username
 	//password
 	//caso
+	//echo $_POST["name"];
+	//echo $_POST["password"];
+	//echo $_POST["caso"];
+	
+
+	$stringa="SELECT * FROM user WHERE username='".$_POST["username"]."'";
+	$q=mysqli_query($conn,$stringa) or die(mysqli_error($conn));
+	$num=mysqli_num_rows($q);
+
+
+
+
+	if($num==1){
+		//username esiste
+		$utente=mysqli_fetch_assoc($q);
+
+		if(password_verify($_POST["password"],$utente["password"])){
+			//echo "utente loggato bene";
+			$_SESSION["id"]=$utente["id"];
+
+			$link_header="Location: ".$url_gen."index.php";
+			header($link_header);
+	
+		}
+		else{
 		
-	$user = filter_input(INPUT_POST,'username',FILTER_SANITIZE_FULL_SPECIAL_CHARS);	
-	$q="Select * from user where name='".$user."'";
-	$rq=mysqli_query($conn,$q);	
+		}
 
-
-	if(mysqli_num_rows($rq)==1){
-	//username esiste in DB
-			
-		$_SESSION["id"]=$rq["id"];
-		header('Location: http://localhost/ldpuniversity/index.php');
-	}
+/*	*/
+	}	
 	else{
-//		echo "Login non effettuato";
+		//username non esiste
+		echo "Il nome o la password sono errati ".'<a href="index.php">riprovare</a>';
 	}
- 
 }
 
 
-
-//	$_SESSION["id"]=1;
-//	header('Location: http://localhost/ldpuniversity/index.php?pag=test');
-
-/*
-if($pag=='login' && $caso=="" && !isset($_SESSION["id"])){
-
-	$_SESSION["id"]=1;
-	header('Location: index.php');
-}
- */
 ?>

@@ -14,8 +14,8 @@
 	echo '<div class="container">';
 	echo '<h3>Lista link</h3>';
 	echo '<ul>';
-	echo '<li><a href="http://localhost/ldpuniversity/index.php">home pubblica</a></li>';
-	echo '<li><a href="http://localhost/ldpuniversity/index.php?pag=dashboard">Dashboard developer</a></li>';
+	echo '<li><a href="'.$url_gen.'index.php">home pubblica</a></li>';
+	echo '<li><a href="'.$url_gen.'index.php?pag=dashboard">Dashboard developer</a></li>';
 	echo '<li></li>';
 	echo '<li></li>';
 	echo '</ul>';

@@ -1,8 +1,8 @@
 <?php
 
 function begin_gen(){
-	$link = $_GET["pag"];
-	
+$link = $_GET["pag"];
+echo '<!DOCTYPE html>';	
 echo "<html>";
 echo '<head>';
 echo '<title>';

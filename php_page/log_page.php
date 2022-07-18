@@ -10,7 +10,7 @@ if($pag=='login' && $caso=='' && !isset($_SESSION["id"]))
   //chiude la sessione
   session_destroy();
   
-  begin_gen();
+  begin_logpage();
   echo '<div class="container">';
   echo '<div class="d-flex justify-content-center h-100">';
   echo '<div class="card">';
@@ -57,7 +57,7 @@ if($pag=='login' && $caso=='' && !isset($_SESSION["id"]))
   echo '</div>';
   echo '</div>';
   echo '</div>';
-  ending_gen();
+  ending_logpage();
 }
 //************************************************************************************************
  ?>
